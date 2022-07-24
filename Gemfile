@@ -66,6 +66,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'brakeman', require: false
+  gem 'letter_opener'
   gem 'reek'
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
