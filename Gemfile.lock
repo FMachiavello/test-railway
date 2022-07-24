@@ -113,6 +113,7 @@ GEM
       rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
+    kwalify (0.7.2)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -181,6 +182,10 @@ GEM
     rainbow (3.1.1)
     rake (13.0.6)
     redis (4.7.1)
+    reek (6.1.1)
+      kwalify (~> 0.7.0)
+      parser (~> 3.1.0)
+      rainbow (>= 2.0, < 4.0)
     regexp_parser (2.5.0)
     reline (0.3.1)
       io-console (~> 0.5)
@@ -280,6 +285,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   redis (~> 4.0)
+  reek
   rubocop
   rubocop-rails
   selenium-webdriver
