@@ -69,6 +69,7 @@ group :development do
   gem 'letter_opener'
   gem 'reek'
   gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'solargraph'
