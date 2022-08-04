@@ -49,6 +49,8 @@ gem 'bootsnap', require: false
 
 gem 'awesome_print'
 gem 'devise'
+# gem 'devise_token_auth', '~> 1.2'
+gem 'devise_token_auth', git: 'git@github.com:lynndylanhurley/devise_token_auth.git', ref: '8f44a8c'
 
 # Use Sass to process CSS
 # gem "sassc-rails"

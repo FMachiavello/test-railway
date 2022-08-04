@@ -1,3 +1,13 @@
+GIT
+  remote: git@github.com:lynndylanhurley/devise_token_auth.git
+  revision: 8f44a8c66fd772b2d33be4ba187c0b1a47caba2a
+  ref: 8f44a8c
+  specs:
+    devise_token_auth (1.2.0)
+      bcrypt (~> 3.0)
+      devise (> 3.5.2, < 5)
+      rails (>= 4.2.0, < 7.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -340,6 +350,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  devise_token_auth!
   factory_bot_rails
   importmap-rails
   jbuilder
