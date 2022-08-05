@@ -28,7 +28,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_04_133322) do
     t.string "unconfirmed_email"
     t.string "first_name"
     t.string "last_name"
-    t.string "nickname"
     t.string "email"
     t.string "mobile_phone"
     t.json "tokens"
