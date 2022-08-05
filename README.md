@@ -1,24 +1,50 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+#### Ruby version
 
-* System dependencies
+Check it on `.ruby-version` file
 
-* Configuration
+#### Configuration
+Ask for the `config/master.key` file
+```bash
+bundle install
+```
 
-* Database creation
+#### Database creation/initialization
 
-* Database initialization
+```bash
+rails db:setup
+```
 
-* How to run the test suite
+#### How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+rspec
+```
 
-* Deployment instructions
+#### Services (job queues, cache servers, search engines, etc.)
+Not apply yet.
 
-* ...
+#### Linters and checks
+
+```bash
+rubocop
+```
+```bash
+reek
+```
+
+#### Run dev server
+```bash
+bin/dev
+```
+
+or
+
+```bash
+rails tailwindcss:watch
+rails server
+
+```
