@@ -18,6 +18,9 @@
 !/tmp/pids/
 !/tmp/pids/.keep
 
+# Ignore RSpec state between runs
+/spec/examples.txt
+
 # Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
