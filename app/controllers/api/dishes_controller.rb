@@ -20,7 +20,7 @@ module Api
       @dish = Dish.new(dish_params)
 
       if @dish.save
-        render :show, status: :created, location: @dish
+        render :show, status: :created, location: api_dish_path(@dish)
       else
         render json: @dish.errors, status: :unprocessable_entity
       end
@@ -30,7 +30,7 @@ module Api
     # PATCH/PUT /api/dishes/1.json
     def update
       if @dish.update(dish_params)
-        render :show, status: :ok, location: @dish
+        render :show, status: :ok, location: api_dish_path(@dish)
       else
         render json: @dish.errors, status: :unprocessable_entity
       end
@@ -51,7 +51,7 @@ module Api
 
     # Only allow a list of trusted parameters through.
     def dish_params
-      params.fetch(:dish, {})
+      params.fetch(:dish, {}).permit(:name)
     end
   end
 end
