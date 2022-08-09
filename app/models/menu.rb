@@ -5,4 +5,6 @@ class Menu < ApplicationRecord
   has_many :dishes, through: :dish_menus
 
   validates :menu_for, presence: true, uniqueness: true
+
+  scope :published, -> { where.not(draft: true) }
 end
