@@ -7,7 +7,8 @@ module Api
     # GET /api/menus
     # GET /api/menus.json
     def index
-      @menus = Menu.published.all
+      @q = Menu.published.includes(:dishes).ransack(params[:q])
+      @menus = @q.result(distinct: true)
     end
 
     # GET /api/menus/1
