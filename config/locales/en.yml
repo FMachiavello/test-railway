@@ -31,3 +31,11 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    models:
+    errors:
+      models:
+        dish_menu:
+          attributes:
+            dish:
+              taken: 'The dish has already been selected'
