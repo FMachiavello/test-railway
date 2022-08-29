@@ -36,6 +36,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_183614) do
     t.index ["menu_for"], name: "index_menus_on_menu_for", unique: true
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "menu_id", null: false
+    t.bigint "dish_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dish_id"], name: "index_orders_on_dish_id"
+    t.index ["menu_id"], name: "index_orders_on_menu_id"
+    t.index ["user_id", "menu_id"], name: "index_orders_on_user_id_and_menu_id", unique: true
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
@@ -61,4 +73,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_183614) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "orders", "dishes"
+  add_foreign_key "orders", "menus"
+  add_foreign_key "orders", "users"
 end

@@ -5,6 +5,7 @@ require 'rails_helper'
 RSpec.describe Menu, type: :model do
   describe 'associations' do
     it { is_expected.to have_and_belong_to_many(:dishes) }
+    it { is_expected.to have_many(:orders).dependent(:restrict_with_error) }
   end
 
   describe 'validations' do
