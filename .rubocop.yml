@@ -21,6 +21,9 @@ Metrics/MethodLength:
   Exclude:
     - db/migrate/*
 
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
 RSpec/MultipleExpectations:
   Enabled: false
 

@@ -8,10 +8,10 @@ main_dish_count = Dish.mains.count
 
   menu = Menu.find_or_create_by menu_for:, draft: false
 
-  menu.dish_menus << DishMenu.create(dish: Dish.mains[i % main_dish_count])
+  menu.dishes << Dish.mains[i % main_dish_count]
 
-  menu.dish_menus << DishMenu.create(dish: Dish.alternatives.first)
-  menu.dish_menus << DishMenu.create(dish: Dish.alternatives.second)
+  menu.dishes << Dish.alternatives.first
+  menu.dishes << Dish.alternatives.second
 end
 
 5.times do |i|
