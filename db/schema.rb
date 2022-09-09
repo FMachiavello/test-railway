@@ -14,6 +14,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_183614) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "dish_menus", force: :cascade do |t|
+    t.bigint "menu_id", null: false
+    t.bigint "dish_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dish_id"], name: "index_dish_menus_on_dish_id"
+    t.index ["menu_id", "dish_id"], name: "index_dish_menus_on_menu_id_and_dish_id", unique: true
+  end
+
   create_table "dishes", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false

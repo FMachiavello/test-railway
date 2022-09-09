@@ -1,4 +1,9 @@
 # frozen_string_literal: true
 
-json.extract! order, :id, :created_at, :updated_at
-json.url api_order_url(order, format: :json)
+json.extract! @order, :id
+json.dish do
+    json.extract! @order.dish, :id, :name
+end
+json.menu do
+    json.extract! @order.menu, :id 
+end
