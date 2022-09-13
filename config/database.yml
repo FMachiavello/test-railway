@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: viandas_production
   username: viandas
   password: <%= ENV["VIANDAS_DATABASE_PASSWORD"] %>
