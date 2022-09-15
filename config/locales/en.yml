@@ -39,3 +39,7 @@ en:
           attributes:
             dish:
               taken: 'The dish has already been selected'
+        order:
+          attributes:
+            dish:
+              dish_should_belong_to_menu: 'The dish should belong to the menu'

@@ -4,8 +4,8 @@ require 'rails_helper'
 
 describe Dish, type: :model do
   describe 'associations' do
-    it { is_expected.to have_many(:dish_menus) }
-    it { is_expected.to have_many(:menus) }
+    it { is_expected.to have_and_belong_to_many(:menus) }
+    it { is_expected.to have_many(:orders).dependent(:restrict_with_error) }
   end
 
   describe 'validations' do

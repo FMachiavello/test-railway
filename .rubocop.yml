@@ -21,8 +21,14 @@ Metrics/MethodLength:
   Exclude:
     - db/migrate/*
 
+Rails/HasAndBelongsToMany:
+  Enabled: false
+
 RSpec/MultipleExpectations:
   Enabled: false
+
+RSpec/NestedGroups:
+  Max: 4
 
 Style/Documentation:
   Enabled: false

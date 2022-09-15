@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :dish_menu do
+  factory :order do
+    user
     menu
-    dish
+    dish { menu.dishes.first }
   end
 end

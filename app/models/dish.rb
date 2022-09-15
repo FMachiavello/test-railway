@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Dish < ApplicationRecord
-  has_many :dish_menus, dependent: :destroy
-  has_many :menus, through: :dish_menus
+  has_and_belongs_to_many :menus
+  has_many :orders, dependent: :restrict_with_error
 
   validates :name, presence: true
 

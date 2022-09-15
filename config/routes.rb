@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   namespace :api do
     mount_devise_token_auth_for 'User', at: 'users/auth'
     resources :dishes
+    resources :orders
     resources :menus, only: %i[index show]
   end
 end
