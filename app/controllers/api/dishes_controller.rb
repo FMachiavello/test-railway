@@ -14,34 +14,6 @@ module Api
     # GET /api/dishes/1.json
     def show; end
 
-    # POST /api/dishes
-    # POST /api/dishes.json
-    def create
-      @dish = Dish.new(dish_params)
-
-      if @dish.save
-        render :show, status: :created, location: api_dish_path(@dish)
-      else
-        render json: @dish.errors, status: :unprocessable_entity
-      end
-    end
-
-    # PATCH/PUT /api/dishes/1
-    # PATCH/PUT /api/dishes/1.json
-    def update
-      if @dish.update(dish_params)
-        render :show, status: :ok, location: api_dish_path(@dish)
-      else
-        render json: @dish.errors, status: :unprocessable_entity
-      end
-    end
-
-    # DELETE /api/dishes/1
-    # DELETE /api/dishes/1.json
-    def destroy
-      @dish.destroy
-    end
-
     private
 
     # Use callbacks to share common setup or constraints between actions.
