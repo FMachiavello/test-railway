@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_01_183614) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_09_191952) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,6 +57,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_183614) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "tickets", force: :cascade do |t|
+    t.integer "amount"
+    t.date "last_update", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_tickets_on_user_id", unique: true
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
@@ -85,4 +92,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_01_183614) do
   add_foreign_key "orders", "dishes"
   add_foreign_key "orders", "menus"
   add_foreign_key "orders", "users"
+  add_foreign_key "tickets", "users"
 end
