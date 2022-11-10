@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     resources :dishes
     resources :orders
     resources :menus, only: %i[index show]
+    resources :tickets
   end
 end

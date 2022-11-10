@@ -13,7 +13,7 @@ module Api
     def show; end
 
     def create
-      @order = current_api_user.orders.find_or_initialize_by(menu_id: order_params[:menu_id]) 
+      @order = current_api_user.orders.find_or_initialize_by(menu_id: order_params[:menu_id])
       if @order.update(order_params)
         render :show, status: :ok, location: [:api, @order]
       else
